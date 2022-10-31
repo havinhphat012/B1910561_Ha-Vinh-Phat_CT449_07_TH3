@@ -1,7 +1,10 @@
 <script>
 export default {
   props: {
-    modelValue: { type: String, default: "" },
+    modelValue: {
+      type: String,
+      default: "",
+    },
   },
   emits: ["submit", "update:modelValue"],
   methods: {
@@ -26,7 +29,7 @@ export default {
     />
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button" @click="submit">
-        <i class="fas fa-search"></i> Tìm kiếm
+        Tìm kiếm
       </button>
     </div>
   </div>

@@ -6,18 +6,23 @@
       @submit:contact="updateContact"
       @delete:contact="deleteContact"
     />
+
     <p>{{ message }}</p>
   </div>
 </template>
+
 <script>
-import ContactForm from "@/components/ContactForm.vue";
-import ContactService from "@/services/contact.service";
+import ContactForm from "../components/ContactForm.vue";
+import ContactService from "../services/contact.service";
 export default {
   components: {
     ContactForm,
   },
   props: {
-    id: { type: String, required: true },
+    id: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -54,7 +59,9 @@ export default {
       if (confirm("Bạn muốn xóa Liên hệ này?")) {
         try {
           await ContactService.delete(this.contact._id);
-          this.$router.push({ name: "contactbook" });
+          this.$router.push({
+            name: "contactbook",
+          });
         } catch (error) {
           console.log(error);
         }

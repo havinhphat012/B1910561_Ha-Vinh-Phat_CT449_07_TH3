@@ -48,8 +48,8 @@
         v-model="contactLocal.favorite"
       />
       <label for="favorite" class="form-check-label">
-        <strong>Liên hệ yêu thích</strong></label
-      >
+        <strong>Liên hệ yêu thích</strong>
+      </label>
     </div>
     <div class="form-group">
       <button class="btn btn-primary">Lưu</button>
@@ -64,6 +64,7 @@
     </div>
   </Form>
 </template>
+
 <script>
 import * as yup from "yup";
 import { Form, Field, ErrorMessage } from "vee-validate";
@@ -75,7 +76,10 @@ export default {
   },
   emits: ["submit:contact", "delete:contact"],
   props: {
-    contact: { type: Object, required: true },
+    contact: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     const contactFormSchema = yup.object().shape({
@@ -113,6 +117,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
-@import "@/assets/form.css";
+@import "../assets/form.css";
 </style>
